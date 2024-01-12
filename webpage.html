@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Position Ranking</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: "Supra W03 NormalRounded";
+        }
+        th, td {
+            border: 0px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .highlight {
+            background-color: #ffcccc;
+        }
+        .highlight-text {
+            color: red;
+        }
+        .normal-text {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <table id="karmaTable">
+        <tr>
+            <th>Rank#</th>
+            <th>Image - ID</th>
+            <th>Karma Score</th>
+        </tr>
+    </table>
+
+    <script>
+        const userId = 13074;
+        fetch('http://127.0.0.1:5000/api/v1/user/' + userId + '/karma-position')
+            .then(response => response.json())
+            .then(data => {
+                const table = document.getElementById('karmaTable');
+                data.forEach(item => {
+                    const row = table.insertRow();
+                    const rankCell = row.insertCell();
+                    const imgCell = row.insertCell();
+                    const karmaCell = row.insertCell();
+                    if (item.id === userId) {
+                        row.classList.add('highlight');
+                        rankCell.classList.add('highlight-text');
+                        karmaCell.classList.add('highlight-text');
+                        imgCell.classList.add('normal-text');
+                    }
+                    rankCell.textContent = item.position;
+                    const img = document.createElement('img');
+                    img.src = item.image_url;
+                    img.style.width = '50px'; // set width to 10px
+                    img.style.height = '50px'; // set height to 10px
+                    img.style.borderRadius = '50%'; // this will make the image a circle
+                    imgCell.appendChild(img);
+                    imgCell.innerHTML += ' ' + item.id;
+                    karmaCell.textContent = item.karma_score;
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
