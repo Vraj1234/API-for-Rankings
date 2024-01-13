@@ -57,7 +57,7 @@ Will return rank information for the user 19823, and two users rankings above an
 
 NOTE: for any user_id such as 9000000, a user does not exist, so the API will return 404: user not found.
 
-<img width="1440" alt="Screenshot 2024-01-13 at 1 19 58 AM" src="https://github.com/Vraj1234/Rankings-API/assets/53624234/bdd020d7-9b74-41b5-aff1-acb582844b19">
+<img width="1440" alt="Screenshot 2024-01-13 at 2 25 59 PM" src="https://github.com/Vraj1234/API-for-Rankings/assets/53624234/384be217-206c-4c2f-874b-48fccfd30154">
 
 
 ## Installation
@@ -100,7 +100,8 @@ The above commands will create the table.
 
 3. Now, run "add_random_users.py". This will generate 100,000 random users and link image_ids to users.
 
-<img width="591" alt="Screenshot 2024-01-13 at 1 16 19 AM" src="https://github.com/Vraj1234/Rankings-API/assets/53624234/175cf058-6e0f-44a0-8e9a-6255ad994f46">
+<img width="1271" alt="Screenshot 2024-01-13 at 2 26 58 PM" src="https://github.com/Vraj1234/API-for-Rankings/assets/53624234/529d0509-f303-490f-a815-fa7a4d257366">
+
 
 ### Setting up API using flask.
 1. Make sure Flask is installed and imported with the right version of Python interpreter.
@@ -110,8 +111,7 @@ The above commands will create the table.
 3. <flask-provided-address>/api/v1/user/19823/karma-position
 Paste this URL in any browser, and you will get JSON results with exactly five objects every time.
 
-<img width="1440" alt="Screenshot 2024-01-13 at 1 21 01 AM" src="https://github.com/Vraj1234/Rankings-API/assets/53624234/978030ef-425f-4f49-99cc-fc9e2747f396">
-
+<img width="1440" alt="Screenshot 2024-01-13 at 2 28 05 PM" src="https://github.com/Vraj1234/API-for-Rankings/assets/53624234/049fd499-e479-45c5-bac4-aa47fd26c4ea">
 
 
 ### Testing API using Automated test cases.
@@ -125,14 +125,13 @@ AND
 
 Parameters for the second test function can be changed in line 18 in the API call itself.
 
-<img width="1014" alt="Screenshot 2024-01-13 at 1 14 10 AM" src="https://github.com/Vraj1234/Rankings-API/assets/53624234/fd8ebe46-3afa-43cd-840a-c381b228448b">
+<img width="1081" alt="Screenshot 2024-01-13 at 2 28 50 PM" src="https://github.com/Vraj1234/API-for-Rankings/assets/53624234/4c0ce84a-8dec-42a8-a898-6d1730b87204">
 
 ### Generate a dynamic HTML page on the basis of an API query:
 1. Line 39 of the "webpage.html" determines the user id.
 2. Using this user_id, the webpage synthesizes an API call, and the resulting JSON is converted to a table and presented.
-
-<img width="1440" alt="Screenshot 2024-01-13 at 1 21 39 AM" src="https://github.com/Vraj1234/Rankings-API/assets/53624234/572598a0-e762-4389-9f85-418dcc718950">
-
+3. 
+<img width="1440" alt="Screenshot 2024-01-13 at 2 29 13 PM" src="https://github.com/Vraj1234/API-for-Rankings/assets/53624234/d1e3a96a-3d2c-4174-ba02-2af6cc2c5005">
 
 ### Extras
 1. clear_tables.py is to purge data from both the tables.
